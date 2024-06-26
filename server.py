@@ -28,7 +28,6 @@ class WebServer:
             while True:
                 c = s.accept()[0]
                 request = c.recv(1024).decode().split('\r\n')
-                print(request)
                 if request:
                     method = request[0].split(' ')[0]
                     if method in self.router.keys():
